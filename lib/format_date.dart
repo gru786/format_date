@@ -30,57 +30,61 @@ class FormatDate {
       {required DateTime dateTime, String format = "dd-mm-yyyy"}) {
     // 2023-12-27 15:52:04.570
     List<String> dateAndTime = dateTime.toString().split(" ");
+    List<String> dateInYyyyMmDd = dateAndTime[0].split("-");
     
 
     if (format == "dd-mm-yyyy") {
-      return "${dateAndTime[2]}-${dateAndTime[1]}-${dateAndTime[0]}";
+      return "${dateInYyyyMmDd[2]}-${dateInYyyyMmDd[1]}-${dateInYyyyMmDd[0]}";
     } 
     else if (format == "dd-mm-yy") {
-      return "${dateAndTime[2]}-${dateAndTime[1]}-${dateAndTime[0].substring( 2)}";
+      return "${dateInYyyyMmDd[2]}-${dateInYyyyMmDd[1]}-${dateInYyyyMmDd[0].substring( 2)}";
     } 
     else if (format == "mm-dd-yyyy") {
-      return "${dateAndTime[1]}-${dateAndTime[2]}-${dateAndTime[0]}";
+      return "${dateInYyyyMmDd[1]}-${dateInYyyyMmDd[2]}-${dateInYyyyMmDd[0]}";
     }
     else if (format == "mm-dd-yy") {
-      return "${dateAndTime[1]}-${dateAndTime[2]}-${dateAndTime[0].substring(2)}";
+      return "${dateInYyyyMmDd[1]}-${dateInYyyyMmDd[2]}-${dateInYyyyMmDd[0].substring(2)}";
     } 
     
     else if (format == "dd/mm/yyyy") {
-      return "${dateAndTime[2]}/${dateAndTime[1]}/${dateAndTime[0]}";
+      return "${dateInYyyyMmDd[2]}/${dateInYyyyMmDd[1]}/${dateInYyyyMmDd[0]}";
     } 
     else if (format == "dd/mm/yy") {
-      return "${dateAndTime[2]}/${dateAndTime[1]}/${dateAndTime[0].substring(2)}";
+      return "${dateInYyyyMmDd[2]}/${dateInYyyyMmDd[1]}/${dateInYyyyMmDd[0].substring(2)}";
     } 
     else if (format == "mm/dd/yyyy") {
-      return "${dateAndTime[1]}/${dateAndTime[2]}/${dateAndTime[0]}";
+      return "${dateInYyyyMmDd[1]}/${dateInYyyyMmDd[2]}/${dateInYyyyMmDd[0]}";
     }
     else if (format == "mm/dd/yy") {
-      return "${dateAndTime[1]}/${dateAndTime[2]}/${dateAndTime[0].substring(2)}";
+      return "${dateInYyyyMmDd[1]}/${dateInYyyyMmDd[2]}/${dateInYyyyMmDd[0].substring(2)}";
     }
 
     else if (format == "dd-mm") {
-      return "${dateAndTime[2]}-${dateAndTime[1]}";
+      return "${dateInYyyyMmDd[2]}-${dateInYyyyMmDd[1]}";
     } 
     else if (format == "dd/mm") {
-      return "${dateAndTime[2]}/${dateAndTime[1]}";
+      return "${dateInYyyyMmDd[2]}/${dateInYyyyMmDd[1]}";
     } 
     else if (format == "ddmm") {
-      return "${dateAndTime[2]}${dateAndTime[1]}";
+      return "${dateInYyyyMmDd[2]}${dateInYyyyMmDd[1]}";
     } 
     else if (format == "ddmmyyyy") {
-      return "${dateAndTime[2]}${dateAndTime[1]}${dateAndTime[1]}";
+      return "${dateInYyyyMmDd[2]}${dateInYyyyMmDd[1]}${dateInYyyyMmDd[0]}";
+    } 
+    else if (format == "ddmmyy") {
+      return "${dateInYyyyMmDd[2]}${dateInYyyyMmDd[1]}${dateInYyyyMmDd[0].substring(2)}";
     } 
     else if (format == "yyyy") {
-      return dateAndTime[0];
+      return dateInYyyyMmDd[0];
     }
     else if (format == "yy") {
-      return dateAndTime[0].substring(2);
+      return dateInYyyyMmDd[0].substring(2);
     }
     else if (format == "dd") {
-      return dateAndTime[2];
+      return dateInYyyyMmDd[2];
     }
      else if (format == "mm") {
-      return dateAndTime[1];
+      return dateInYyyyMmDd[1];
     }
 
     return "Invalid Format";
