@@ -23,6 +23,15 @@ class FormatDate {
     else if (format == "hh:mm") {
       return "${hhMmSs[0]}:${hhMmSs[1]}";
     }
+    else if (format == "hh") {
+      return hhMmSs[0];
+    }
+    else if (format == "mm") {
+      return hhMmSs[1];
+    }
+    else if (format == "ss") {
+      return hhMmSs[2];
+    }
 
     return "Invalid Format";
   }
