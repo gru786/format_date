@@ -1,6 +1,6 @@
 name: format_date
-description: "To be able to format dates easily. You just need to provide a datetime object and a desire formatting as String, as input to one of the two functions - formatDate or formatTime, to get desired output."
-version: 0.0.4
+description: "To be able to format dates, all you need is to provide a datetime object and a desired formatting as String, as input to one of the two functions - formatDate or formatTime."
+version: 0.0.5
 repository: https://github.com/gru786/format_date.git
  
 
