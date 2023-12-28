@@ -1,7 +1,8 @@
 name: format_date
 description: "To be able to format dates easily"
-version: 0.0.1
-homepage:
+version: 0.0.3
+repository: https://github.com/gru786/format_date
+ 
 
 environment:
   sdk: '>=3.2.3 <4.0.0'

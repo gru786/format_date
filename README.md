@@ -11,29 +11,67 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A simple package that helps in formatting date and time from a given DateTime object.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Convert Datetime to String with desired format effortlessly.
+
+
+
+
 
 ## Getting started
+```dart
+flutter pub add format_date
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+
 
 ```dart
-const like = 'sample';
+import 'package:format_date/format_date.dart';
+
+void main(){
+    runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  DateTime currentDateTime = DateTime.now();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Column(
+            children: [
+                Text(
+                    FormatDate.formatDate(dateTime: currentDateTime,), //dd-mm-yyyy
+                );
+                Text(
+                    FormatDate.formatDate(dateTime: currentDateTime, format: 'dd/mm'),
+                );
+                Text(
+                    FormatDate.formatTime(dateTime: currentDateTime,), //hh:mm:ss
+                );
+                Text(
+                    FormatDate.formatTime(dateTime: currentDateTime, format: 'hh:mm'),
+                );
+            ]
+        ),
+    );
+  }
+}
+
+
+
+
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+For more information:
+https://github.com/gru786/format_date
